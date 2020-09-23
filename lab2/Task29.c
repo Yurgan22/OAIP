@@ -1,13 +1,13 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <locale.h>
 
+
 int main() {
+
     setlocale(LC_ALL, "Russian");
 
     int a[100][100], n, s = 0, error;
-    //printf("Введите размерность матрицы N*N. N = ");
-   
+
     do {
         printf("Введите размерность матрицы N*N. N = ");
         error = scanf_s("%d", &n);
@@ -26,11 +26,12 @@ int main() {
                 error = scanf_s("%d", &a[i][j]);
                 if (error == 0)
                 {
-                    printf("Неверный ввод, потворите попытку.\n");
+                    printf("Неверный ввод, потворите попытку. Введите элементы, начиная с a[%d,%d]\n",i+1,j+1);
                     rewind(stdin);
                 }
             } while (error == 0);
             if (j == n - 1) s += a[i][j];
         }
-    printf("Cумма элементов последнего столбца равна %2d ", s); 
+    printf("Cумма элементов последнего столбца равна - %d \n", s);
+    return 0;
 }

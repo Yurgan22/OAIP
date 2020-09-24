@@ -1,6 +1,22 @@
-﻿#include <stdlib.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <locale.h>
+
+void vvod(int *x)
+{
+    while (!(scanf_s("%d", x))) {
+        printf("Данные введены неверно, повторите попытку...\n");
+        rewind(stdin);
+    }
+}
+
+void vvod_array(int *x, int i)
+{
+    while (!(scanf_s("%d", x))) {
+        printf("Данные введены неверно, повторите попытку. Введите элементы, начиная с a[%d]\n", i + 1);
+        rewind(stdin);
+    }
+}
 
 int main()
 {
@@ -9,12 +25,13 @@ int main()
     setlocale(LC_ALL, "Rus");
 
     printf_s("Введите размерность массива N = ");
-    scanf_s("%d", &n);
+    vvod(&n);
     printf_s("Введите элементы массива A[%d]: ", n);
-    scanf_s("%d", &a[0]);
+    vvod(&a[0]);
+
     for (int i = 1; i < n; i++)
     {
-        scanf_s("%d", &a[i]);
+        vvod_array(&a[i],i);
         if (a[i] > a[0]) right++; else left++;
     }
 

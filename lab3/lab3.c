@@ -1,4 +1,5 @@
-﻿#include <stdlib.h>
+// Variant 9
+#include <stdlib.h>
 #include <stdio.h>
 #include <locale.h>
 #define N 100

@@ -1,3 +1,4 @@
+// Variant 2
 #include<stdio.h>
 #include<locale.h>
 #include<malloc.h>

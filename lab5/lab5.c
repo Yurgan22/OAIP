@@ -1,3 +1,4 @@
+// Variant 8
 #include <stdlib.h>
 #include <stdio.h>
 #include <locale.h>

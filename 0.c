@@ -29,17 +29,18 @@ int main()
 	printf("Введите подстроку\n");
 	podstr = (char*)malloc((p + 2) * sizeof(char));
 	rewind(stdin);
-	fgets(podstr, p, stdin);
+	fgets(podstr, p + 1, stdin);
 	podstr += '\0';
-	int f = 0, j = 0, index_1;
+	int f = 0, j = 0, index;
 	for (int i = 0; i < n; i++)
 	{
 		j = 0;
+		index = 0;
 		while (text[i][j] != '\n' && text[i][j] != '\0')
 		{
+			if (text[i][j] == ' ') index = j + 1;
 			if (text[i][j] == podstr[0])
 			{
-				index_1 = j;
 				while (text[i][j] == podstr[f] && podstr[f] != '\n' && text[i][j] != '\n' && text[i][j] != ' ')
 				{
 					j++;
@@ -47,14 +48,14 @@ int main()
 				}
 			}
 			if (f == p) {
-				j = index_1;
+				j = index;
 				while (text[i][j] != ' ' && text[i][j] != '\n' && text[i][j] != '\0')
 				{
 					text[i][j] -= 32;
 					j++;
 				}
 			}
-			else j++;
+			else if (!f) j++;
 			f = 0;
 		}
 	}
@@ -70,3 +71,7 @@ int main()
 	free(podstr);
 	return 0;
 }
+
+//ghghghgh popopopo
+//fghghghg adfdsffsfgrffhgh
+//sdafdssdfdsf jhkhhjgghf

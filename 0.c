@@ -1,3 +1,4 @@
+// 8 Лабараторная работа 15 Вариант
 #include<stdio.h>
 #include<stdlib.h>
 #include<iostream>
